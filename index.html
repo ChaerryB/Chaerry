@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>도사놈이라</title>
+</head>
+<body>
+
+	<h1>
+    <img id="draw" src="img1.jpg">
+    </h1>
+
+    <h2>
+	<input id="vol" type="range" max="100" min="0">
+	<button id="playBut">play</button>
+	<audio id="ostSnd" src="ost.mp3"></audio>
+	<button id="stopBut">stop</button>
+	</h2>
+	
+	<script type="text/javascript">
+
+		draw.onmouseover = function(){
+			draw.src = "img2.jpg";
+		}
+		draw.onmouseout = function(){
+			draw.src = "img1.jpg";
+		}
+
+		vol.value = 100;
+		vol.oninput = function(){
+			ostSnd.volume = vol.value / 100;
+		}
+
+		playBut.onclick = function(){
+			ostSnd.play();
+		}
+		stopBut.onclick = function (){
+			ostSnd.pause();
+		}
+
+	</script>
+
+</body>
+</html>
